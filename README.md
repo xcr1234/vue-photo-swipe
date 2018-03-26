@@ -59,7 +59,7 @@ Vue.use(PhotoSwipe);
                         }
                      },
                      {
-                       loader(callbcak){
+                       loader(callback){
                          //异步加载图片，自动计算图片的宽度、高度
                          setTimeout(()=>{
                               callback("http://old.bz55.com/uploads/allimg/140717/1-140GF94204.jpg");
