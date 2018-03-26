@@ -1,11 +1,17 @@
 # PhotoSwipe Vue 2.0插件
 
+[demo](https://xcr1234.github.io/vue-photo-swipe/index.html#/)
+
+
+
 # 环境
 
 Vue 2.0
 
 
 # 安装
+
+[下载](https://github.com/xcr1234/vue-photo-swipe/archive/master.zip)
 
 直接把src/photo-swipe放到你项目的src中，然后在main.js中引入：
 
