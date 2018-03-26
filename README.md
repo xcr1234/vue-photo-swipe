@@ -1,4 +1,3 @@
-# vue-photo-swipe
 # PhotoSwipe Vue 2.0插件
 
 # 环境
