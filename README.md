@@ -1,6 +1,6 @@
 # PhotoSwipe Vue 2.0插件
 
-[demo](https://xcr1234.github.io/vue-photo-swipe/index.html#/)
+[demo](https://xcr1234.github.io/vue-photo-swipe/#/)
 
 
 
