@@ -137,34 +137,33 @@
           }
           if(data.loader && item.w < 1 && item.h < 1){
             item.src = null;
-            data.loader((src,width,height)=>{
-              if(width && height){
-                item.src = src;
-                item.w= width;
-                item.h = height;
-                pswp.invalidateCurrItems(); // reinit Items
-                pswp.updateSize(true); // reinit Items
-              }else{
-                const img = new Image();
-                img.onload = function() { // will get size after load
-                  item.src = src;
-                  item.w = img.width; // set image width
-                  item.h = img.height; // set image height
-                  pswp.invalidateCurrItems(); // reinit Items
-                  pswp.updateSize(true); // reinit Items
-                };
-                img.src= src;
-              }
-            });
+            if(!item.loading){
+                item.loading = true;
+                data.loader((src,width,height)=>{
+                    if(width && height){
+                        item.src = src;
+                        item.w= width;
+                        item.h = height;
+                        pswp.invalidateCurrItems(); // reinit Items
+                        pswp.updateSize(true); // reinit Items
+                    }else{
+                        const img = new Image();
+                        img.onload = function() { // will get size after load
+                            item.src = src;
+                            item.w = img.width; // set image width
+                            item.h = img.height; // set image height
+                            pswp.invalidateCurrItems(); // reinit Items
+                            pswp.updateSize(true); // reinit Items
+                        };
+                        img.src= src;
+                    }
+                    item.loading = false;
+                });
+            }
           }
         });
         pswp.init();
         this.$refs.el.$pwsp = pswp;
-      }
-    },
-    watch:{
-      data(){
-        this.update();
       }
     }
   }
