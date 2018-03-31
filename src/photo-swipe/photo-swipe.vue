@@ -114,7 +114,7 @@
       }
     },
     destroyed(){
-      this.$refs.el.$pwsp.close();
+     // this.$refs.el.$pwsp.close();
     },
     methods:{
       update(){
